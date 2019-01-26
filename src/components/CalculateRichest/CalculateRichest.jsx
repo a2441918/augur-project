@@ -5,7 +5,7 @@ import axios from 'axios';
 /**
  * Import Children
  */
-import InputBox from '../reuse/InputBox/InputBox';
+import InputBoxContainer from '../reuse/InputBoxContainer/InputBoxContainer';
 
 class CalculateRichest extends Component {
 
@@ -59,7 +59,7 @@ class CalculateRichest extends Component {
     render() {
         return (
             <div>
-                <InputBox
+                <InputBoxContainer
                     placeholder={'Enter a token value to calculate the richest'}
                     getInputValue={this.handleSubmit}
                     resetValue={this.resetValue}

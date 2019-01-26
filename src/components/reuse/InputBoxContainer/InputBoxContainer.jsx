@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {InputGroup, Button, Input} from 'reactstrap';
 
-class InputBox extends Component {
+class InputBoxContainer extends Component {
 
     constructor(props) {
         super(props);
@@ -54,10 +54,10 @@ class InputBox extends Component {
     }
 }
 
-InputBox.propTypes = {
+InputBoxContainer.propTypes = {
     placeholder: PropTypes.string,
     getInputValue: PropTypes.func,
     resetValue: PropTypes.func
 };
 
-export default InputBox;
+export default InputBoxContainer;

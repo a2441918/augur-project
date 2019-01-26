@@ -1,17 +1,20 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import {InputGroup, Button, Input} from 'reactstrap';
 
-class InputBoxContainer extends Component {
+interface InputBoxContainerState {
+    value: string
+}
 
-    constructor(props) {
+class InputBoxContainer extends Component<any, InputBoxContainerState> {
+
+    constructor(props: any) {
         super(props);
         this.state = {
             value: ''
         };
     }
 
-    handleChange = (event) => {
+    handleChange = (event: any) => {
         this.setState({
             value: event.target.value
         });
@@ -53,11 +56,5 @@ class InputBoxContainer extends Component {
         );
     }
 }
-
-InputBoxContainer.propTypes = {
-    placeholder: PropTypes.string,
-    getInputValue: PropTypes.func,
-    resetValue: PropTypes.func
-};
 
 export default InputBoxContainer;

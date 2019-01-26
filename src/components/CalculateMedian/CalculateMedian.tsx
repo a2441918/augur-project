@@ -7,18 +7,26 @@ import axios from 'axios';
  */
 import InputBoxContainer from '../reuse/InputBoxContainer/InputBoxContainer';
 
-class CalculateMedian extends Component {
+interface CalculateMedianState {
+    showSpinner: boolean,
+    data: string,
+    value: string,
+    error: boolean
+}
 
-    constructor(props) {
+class CalculateMedian extends Component<any, CalculateMedianState> {
+
+    constructor(props: any) {
         super(props);
         this.state = {
-            data: 0,
+            data: '',
             value: '',
-            showSpinner: false
+            showSpinner: false,
+            error: false
         };
     }
 
-    callAPI = (token) => {
+    callAPI = (token: string) => {
         this.setState({showSpinner: true});
         axios.get(`http://localhost:8080/${token}/stats/median`)
             .then((res) => {
@@ -38,17 +46,17 @@ class CalculateMedian extends Component {
     };
 
 
-    handleSubmit = (value) => {
+    handleSubmit = (value: string) => {
         this.setState({
             value: value
         });
         this.callAPI(value);
     };
 
-    resetValue = (value) => {
+    resetValue = (value: string) => {
         if (!value) {
             this.setState({
-                data: 0,
+                data: '',
                 showSpinner: false,
                 value: '',
                 error: false
@@ -65,7 +73,7 @@ class CalculateMedian extends Component {
                     resetValue={this.resetValue}
                 />
                 {this.state.showSpinner && <Spinner color="primary"/>}
-                {this.state.data !== 0 && !this.state.error &&
+                {this.state.data !== '' && !this.state.error &&
                 <div>
                     <h5>The median value for the supplied token <code>{this.state.value}</code> is </h5>
                     <h4>{this.state.data}</h4>

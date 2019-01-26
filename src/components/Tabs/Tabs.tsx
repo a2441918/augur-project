@@ -11,15 +11,19 @@ import CalculateAverage from '../CalculateAverage/CalculateAverage';
 import CalculateRichest from '../CalculateRichest/CalculateRichest';
 import CalculateMostActive from '../CalculateMostActive/CalculateMostActive';
 
-class Tabs extends Component {
-    constructor(props) {
+interface TabsState {
+    activeTab: string
+}
+
+class Tabs extends Component<any, TabsState> {
+    constructor(props: any) {
         super(props);
         this.state = {
             activeTab: '1'
         };
     }
 
-    toggle = (tab) => {
+    toggle = (tab: string) => {
         if (this.state.activeTab !== tab) {
             this.setState({
                 activeTab: tab
@@ -27,7 +31,7 @@ class Tabs extends Component {
         }
     };
 
-    renderComponent = (name) => {
+    renderComponent = (name: string) => {
 
         switch (name) {
             case 'Calculate Median':
@@ -68,8 +72,8 @@ class Tabs extends Component {
                         return (
                             <TabPane tabId={(index + 1).toString()}
                                      key={index}>
-                                <Row>
-                                    <Col sm="12">
+                                <Row className={'tabRow'}>
+                                    <Col sm="12" className={'tabContent'}>
                                         <h4>{tabName}</h4>
                                         {this.renderComponent(tabName)}
                                     </Col>

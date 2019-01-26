@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Spinner} from 'reactstrap';
+import {InputGroup, Button, Input, Spinner} from 'reactstrap';
 import axios from 'axios';
 
 /**
@@ -7,21 +7,28 @@ import axios from 'axios';
  */
 import InputBoxContainer from '../reuse/InputBoxContainer/InputBoxContainer';
 
-class CalculateMostActive extends Component {
+interface CalculateMostRichestState {
+    showSpinner: boolean,
+    data: string,
+    value: string,
+    error: boolean
+}
 
-    constructor(props) {
+class CalculateRichest extends Component<any, CalculateMostRichestState> {
+
+    constructor(props: any) {
         super(props);
         this.state = {
-            data: 0,
+            data: '',
             value: '',
             showSpinner: false,
             error: false
         };
     }
 
-    callAPI = (token) => {
+    callAPI = (token: string) => {
         this.setState({showSpinner: true});
-        axios.get(`http://localhost:8080/${token}/stats/mostActive`)
+        axios.get(`http://localhost:8080/${token}/stats/richest`)
             .then((res) => {
                 this.setState({
                     data: res.data,
@@ -38,17 +45,18 @@ class CalculateMostActive extends Component {
         });
     };
 
-    handleSubmit = (value) => {
+
+    handleSubmit = (value: string) => {
         this.setState({
             value: value
         });
         this.callAPI(value);
     };
 
-    resetValue = (value) => {
+    resetValue = (value: string) => {
         if (!value) {
             this.setState({
-                data: 0,
+                data: '',
                 showSpinner: false,
                 value: '',
                 error: false
@@ -60,14 +68,14 @@ class CalculateMostActive extends Component {
         return (
             <div>
                 <InputBoxContainer
-                    placeholder={'Enter a token value to calculate the most active token'}
+                    placeholder={'Enter a token value to calculate the richest'}
                     getInputValue={this.handleSubmit}
                     resetValue={this.resetValue}
                 />
                 {this.state.showSpinner && <Spinner color="primary"/>}
-                {this.state.data !== 0 && !this.state.error &&
+                {this.state.data !== '' && !this.state.error &&
                 <div>
-                    <h5>The most active account for <code>{this.state.value}</code> is </h5>
+                    <h5>The richest value for the supplied token <code>{this.state.value}</code> is </h5>
                     <h4>{this.state.data}</h4>
                 </div>}
                 {this.state.error && <h4>Invalid token</h4>}
@@ -75,4 +83,4 @@ class CalculateMostActive extends Component {
     }
 }
 
-export default CalculateMostActive;
+export default CalculateRichest;

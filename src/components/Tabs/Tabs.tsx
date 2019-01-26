@@ -12,18 +12,18 @@ import CalculateRichest from '../CalculateRichest/CalculateRichest';
 import CalculateMostActive from '../CalculateMostActive/CalculateMostActive';
 
 interface TabsState {
-    activeTab: string
+    activeTab: number
 }
 
 class Tabs extends Component<any, TabsState> {
     constructor(props: any) {
         super(props);
         this.state = {
-            activeTab: '1'
+            activeTab: 1
         };
     }
 
-    toggle = (tab: string) => {
+    toggle = (tab: number) => {
         if (this.state.activeTab !== tab) {
             this.setState({
                 activeTab: tab
@@ -43,7 +43,7 @@ class Tabs extends Component<any, TabsState> {
             case 'Calculate Most Active':
                 return <CalculateMostActive/>;
             default:
-                return <div>Hi</div>;
+                return <div>Placeholder for Calculate Balance Component</div>;
         }
     };
 
@@ -55,8 +55,8 @@ class Tabs extends Component<any, TabsState> {
                         return (
                             <NavItem key={index}>
                                 <NavLink
-                                    className={classnames({active: this.state.activeTab === (index + 1).toString()})}
-                                    onClick={() => this.toggle((index + 1).toString())}>
+                                    className={classnames({active: this.state.activeTab === (index + 1)})}
+                                    onClick={() => this.toggle((index + 1))}>
                                     {item}
                                 </NavLink>
                             </NavItem>
@@ -70,7 +70,7 @@ class Tabs extends Component<any, TabsState> {
                             .replace(/^[^ ]/g, match => (match.toUpperCase()));
 
                         return (
-                            <TabPane tabId={(index + 1).toString()}
+                            <TabPane tabId={(index + 1)}
                                      key={index}>
                                 <Row className={'tabRow'}>
                                     <Col sm="12" className={'tabContent'}>

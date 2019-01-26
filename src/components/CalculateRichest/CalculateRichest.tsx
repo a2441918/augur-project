@@ -36,7 +36,7 @@ class CalculateRichest extends Component<any, CalculateMostRichestState> {
                     error: false
                 });
             }).catch((error) => {
-            if (error.response.data.error === 'no such token') {
+            if (error.response.data.hasOwnProperty('error')) {
                 this.setState({
                     error: true,
                     showSpinner: false

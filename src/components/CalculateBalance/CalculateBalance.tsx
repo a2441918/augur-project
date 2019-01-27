@@ -64,7 +64,7 @@ class CalculateBalance extends Component<any, CalculateBalanceState> {
 				<InputBoxContainer
 					id={1}
 					name={['token', 'account']}
-					placeholder={'Enter a token value to calculate the balance'}
+					placeholder={'balance'}
 				/>
 				<ButtonContainer name={['token', 'account']}
 								 getInputValue={this.handleSubmit}

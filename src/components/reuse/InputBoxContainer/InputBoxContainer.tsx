@@ -38,13 +38,12 @@ class InputBoxContainer extends Component<any, InputBoxContainerState> {
 	}
 
 	render() {
-		console.log(history)
 		return (
 			<div>
 				{this.props.name.map((item: string, index: number) => {
 					return (
 						<FormGroup key={index}>
-							<Input placeholder={this.props.placeholder}
+							<Input placeholder={`Enter a ${item} value to calculate the ${this.props.placeholder}`}
 								   type="text"
 								   name={`${item}${this.props.id}`}
 								   id={`token${this.props.id}`}

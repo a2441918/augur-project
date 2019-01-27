@@ -68,7 +68,7 @@ class CalculateRichest extends Component<any, CalculateMostRichestState> {
 				<InputBoxContainer
 					id={this.props.id}
 					name={['token']}
-					placeholder={'Enter a token value to calculate the richest'}
+					placeholder={'richest'}
 				/>
 				<ButtonContainer name={['token']}
 								 getInputValue={this.handleSubmit}

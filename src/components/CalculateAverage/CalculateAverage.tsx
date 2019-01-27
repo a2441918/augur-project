@@ -72,7 +72,7 @@ class CalculateAverage extends Component<any, CalculateAverageState> {
 				<InputBoxContainer
 					id={this.props.id}
 					name={['token']}
-					placeholder={'Enter a token value to calculate the average'}
+					placeholder={'average'}
 				/>
 				<ButtonContainer name={['token']}
 								 getInputValue={this.handleSubmit}

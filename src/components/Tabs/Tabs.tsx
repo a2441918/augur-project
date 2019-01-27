@@ -8,6 +8,7 @@ import {TAB_NAMES} from '../../constants/constants';
 import logo from '../../augur-logo.svg';
 import {changeTokenInputValue, changeAccountInputValue, getTabValue} from '../../actions/actions';
 import history from '../../utils/utils';
+import ErrorBoundary from '../../App';
 
 /**
  * Import Children components
@@ -82,12 +83,14 @@ class Tabs extends Component<any, TabsState> {
 				return <Route path={`/`}
 							  render={() =>
 								  <Suspense fallback={<div>Loading...</div>}>
-									  <CalculateBalance id={index}/>
+									  <h1>Welcome to Augur Demo Project</h1>
+									  <h2>Please click on the above tabs to get started.</h2>
 								  </Suspense>}/>;
 		}
 	};
 
 	render() {
+		console.log(history)
 		return (
 			<div>
 				<Navbar>
@@ -126,7 +129,9 @@ class Tabs extends Component<any, TabsState> {
 								<Row className={'tabRow'}>
 									<Col sm="12" className={'tabContent'}>
 										<h4>{tabName}</h4>
-										{this.renderComponent(tabName.replace(/\s/g, ''), (index + 1))}
+										{history.location.pathname === '/' ? <Suspense fallback={<div>Loading...</div>}>
+											<CalculateBalance id={index}/>
+										</Suspense> : this.renderComponent(tabName.replace(/\s/g, ''), (index + 1))}
 									</Col>
 								</Row>
 							</TabPane>

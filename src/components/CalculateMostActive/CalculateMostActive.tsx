@@ -71,7 +71,7 @@ class CalculateMostActive extends Component<any, CalculateMostActiveState> {
                 <InputBoxContainer
                     id={this.props.id}
                     name={['token']}
-                    placeholder={'Enter a token value to calculate the most active token'}
+                    placeholder={'most active token'}
                 />
                 <ButtonContainer getInputValue={this.handleSubmit} id={this.props.id}/>
                 {this.state.showSpinner && <Spinner color="primary"/>}

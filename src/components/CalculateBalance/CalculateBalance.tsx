@@ -1,38 +1,36 @@
 import React, {Component, Fragment} from 'react';
-import {Spinner} from 'reactstrap';
 import axios from 'axios';
 import {connect} from 'react-redux';
-
-/**
- * Import Children
- */
 import InputBoxContainer from '../reuse/InputBoxContainer/InputBoxContainer';
 import ButtonContainer from '../reuse/ButtonContainer/ButtonContainer';
+import {Spinner} from 'reactstrap';
 
-interface CalculateMostRichestState {
+interface CalculateBalanceState {
 	showSpinner: boolean,
 	data: string,
-	value: string,
+	token: string,
+	account: string,
 	error: boolean,
 	isInvalid: boolean
 }
 
-class CalculateRichest extends Component<any, CalculateMostRichestState> {
+class CalculateBalance extends Component<any, CalculateBalanceState> {
 
 	constructor(props: any) {
 		super(props);
 		this.state = {
 			data: '',
-			value: '',
+			token: '',
+			account: '',
 			showSpinner: false,
 			error: false,
 			isInvalid: false
 		};
 	}
 
-	callAPI = (token: string) => {
+	callAPI = (token: string, account: string) => {
 		this.setState({showSpinner: true});
-		axios.get(`http://localhost:8080/${token}/stats/richest`, {responseType: 'json'})
+		axios.get(`http://localhost:8080/${token}/account/${account}/balance`, {responseType: 'json'})
 			.then((res) => {
 				this.setState({
 					data: res.data,
@@ -49,36 +47,32 @@ class CalculateRichest extends Component<any, CalculateMostRichestState> {
 		});
 	};
 
-	handleSubmit = (value: string) => {
-		if (value) {
+	handleSubmit = (token: string, account: string) => {
+		if (token) {
 			this.setState({
-				value: value
+				token: token,
+				account: account
 			});
-			this.callAPI(value);
+			this.callAPI(token, account);
 		}
 	};
 
-	resetInputValue = () => {
-		this.setState({value: '', data: ''})
-	};
 
 	render() {
 		return (
 			<div>
 				<InputBoxContainer
-					id={this.props.id}
-					name={['token']}
-					placeholder={'Enter a token value to calculate the richest'}
+					id={1}
+					name={['token', 'account']}
+					placeholder={'Enter a token value to calculate the balance'}
 				/>
-				<ButtonContainer name={['token']}
+				<ButtonContainer name={['token', 'account']}
 								 getInputValue={this.handleSubmit}
-								 id={this.props.id}
-								 reset={this.resetInputValue}
-				/>
+								 id={this.props.id}/>
 				{this.state.showSpinner && <Spinner color="primary"/>}
-				{this.state.data !== '' && !this.state.error && this.state.value &&
+				{this.state.data !== '' && !this.state.error && this.state.token &&
                 <Fragment>
-                    <h5>The richest value for the supplied token <code>{this.state.value}</code> is </h5>
+                    <h5>The balance for the supplied token <code>{this.state.token}</code> and account <code>{this.state.account}</code> is </h5>
                     <h4>{this.state.data}</h4>
                 </Fragment>}
 				{this.state.error && <h4>Invalid token</h4>}
@@ -86,11 +80,4 @@ class CalculateRichest extends Component<any, CalculateMostRichestState> {
 	}
 }
 
-const mapStateToProps = (state: any) => {
-	return {
-		inputId: state.changeTokenInputValueReducer.id,
-		value: state.changeTokenInputValueReducer.value
-	};
-};
-
-export default connect(mapStateToProps, null)(CalculateRichest);
+export default CalculateBalance;

@@ -1,90 +1,157 @@
-import React, {Component} from 'react';
-import {TabContent, TabPane, Nav, NavItem, NavLink, Row, Col} from 'reactstrap';
+import React, {Component, Suspense} from 'react';
+import {Route, NavLink} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {TabContent, TabPane, Nav, NavItem, Row, Col, NavbarBrand, Navbar} from 'reactstrap';
 import classnames from 'classnames';
-import {tabNames} from '../../constants/tabNames';
+import {TAB_NAMES} from '../../constants/constants';
+import logo from '../../augur-logo.svg';
+import {changeTokenInputValue, changeAccountInputValue, getTabValue} from '../../actions/actions';
+import history from '../../utils/utils';
 
 /**
  * Import Children components
  */
-import CalculateMedian from '../CalculateMedian/CalculateMedian';
-import CalculateAverage from '../CalculateAverage/CalculateAverage';
-import CalculateRichest from '../CalculateRichest/CalculateRichest';
-import CalculateMostActive from '../CalculateMostActive/CalculateMostActive';
+const CalculateMedian = React.lazy(() => import('../CalculateMedian/CalculateMedian'));
+const CalculateAverage = React.lazy(() => import('../CalculateAverage/CalculateAverage'));
+const CalculateRichest = React.lazy(() => import('../CalculateRichest/CalculateRichest'));
+const CalculateMostActive = React.lazy(() => import('../CalculateMostActive/CalculateMostActive'));
+const CalculateBalance = React.lazy(() => import('../CalculateBalance/CalculateBalance'));
 
 interface TabsState {
-    activeTab: number
+	activeTab: number
 }
 
 class Tabs extends Component<any, TabsState> {
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            activeTab: 1
-        };
-    }
+	constructor(props: any) {
+		super(props);
+		this.state = {
+			activeTab: 1
+		};
+	}
 
-    toggle = (tab: number) => {
-        if (this.state.activeTab !== tab) {
-            this.setState({
-                activeTab: tab
-            });
-        }
-    };
+	toggle = (tab: number) => {
+		if (this.state.activeTab !== tab) {
+			this.setState({
+				activeTab: tab
+			});
+			this.props.getTabValue(tab);
+		}
+	};
 
-    renderComponent = (name: string) => {
+	componentWillUpdate(nextProps: Readonly<any>, nextState: Readonly<TabsState>, nextContext: any): void {
+		if(Number.isInteger(nextProps.tabId)) {
+			this.props.changeTokenInputValue('')
+		}
+	}
 
-        switch (name) {
-            case 'Calculate Median':
-                return <CalculateMedian/>;
-            case 'Calculate Average':
-                return <CalculateAverage/>;
-            case 'Calculate Richest':
-                return <CalculateRichest/>;
-            case 'Calculate Most Active':
-                return <CalculateMostActive/>;
-            default:
-                return <div>Placeholder for Calculate Balance Component</div>;
-        }
-    };
+	renderComponent = (name: string, index: number) => {
 
-    render() {
-        return (
-            <div>
-                <Nav tabs>
-                    {tabNames.map((item, index) => {
-                        return (
-                            <NavItem key={index}>
-                                <NavLink
-                                    className={classnames({active: this.state.activeTab === (index + 1)})}
-                                    onClick={() => this.toggle((index + 1))}>
-                                    {item}
-                                </NavLink>
-                            </NavItem>
-                        );
-                    })
-                    }
-                </Nav>
-                <TabContent activeTab={this.state.activeTab}>
-                    {tabNames.map((item, index) => {
-                        const tabName = item.replace(/(\B)[^ ]*/g, match => (match.toLowerCase()))
-                            .replace(/^[^ ]/g, match => (match.toUpperCase()));
+		switch (name) {
+			case 'CalculateMedian':
+				return <Route path={`/CalculateMedian`}
+							  render={() =>
+								  <Suspense fallback={<div>Loading...</div>}>
+									  <CalculateMedian id={index}/>
+								  </Suspense>}/>;
+			case 'CalculateAverage':
+				return <Route path={`/CalculateAverage`}
+							  render={() =>
+								  <Suspense fallback={<div>Loading...</div>}>
+									  <CalculateAverage id={index}/>
+								  </Suspense>}/>;
+			case 'CalculateRichest':
+				return <Route path={`/CalculateRichest`}
+							  render={() =>
+								  <Suspense fallback={<div>Loading...</div>}>
+									  <CalculateRichest id={index}/>
+								  </Suspense>}/>;
+			case 'CalculateMostActive':
+				return <Route path={`/CalculateMostActive`}
+							  render={() =>
+								  <Suspense fallback={<div>Loading...</div>}>
+									  <CalculateMostActive id={index}/>
+								  </Suspense>}/>;
+			case 'CalculateBalance':
+				return <Route path={`/CalculateBalance`}
+							  render={() =>
+								  <Suspense fallback={<div>Loading...</div>}>
+									  <CalculateBalance id={index}/>
+								  </Suspense>}/>;
+			default:
+				return <Route path={`/`}
+							  render={() =>
+								  <Suspense fallback={<div>Loading...</div>}>
+									  <CalculateBalance id={index}/>
+								  </Suspense>}/>;
+		}
+	};
 
-                        return (
-                            <TabPane tabId={(index + 1)}
-                                     key={index}>
-                                <Row className={'tabRow'}>
-                                    <Col sm="12" className={'tabContent'}>
-                                        <h4>{tabName}</h4>
-                                        {this.renderComponent(tabName)}
-                                    </Col>
-                                </Row>
-                            </TabPane>
-                        );
-                    })}
-                </TabContent>
-            </div>
-        );
-    }
+	render() {
+		return (
+			<div>
+				<Navbar>
+					<NavbarBrand href="/">
+						<div className={'imageBackground'}>
+							<img src={logo} alt="Logo"/>
+						</div>
+					</NavbarBrand>
+					<Nav tabs>
+						{TAB_NAMES.map((item, index) => {
+							const tabName = item.replace(/(\B)[^ ]*/g, match => (match.toLowerCase()))
+								.replace(/^[^ ]/g, match => (match.toUpperCase()));
+							return (
+								<NavItem key={index}>
+									<NavLink
+										className="nav-link"
+										activeClassName={classnames({active: this.state.activeTab === (index + 1)})}
+										exact to={`/${tabName.replace(/\s/g, '')}`}
+										onClick={() => this.toggle((index + 1))}>
+										{item}
+									</NavLink>
+								</NavItem>
+							);
+						})
+						}
+					</Nav>
+				</Navbar>
+				<TabContent activeTab={this.state.activeTab}>
+					{TAB_NAMES.map((item, index) => {
+						const tabName = item.replace(/(\B)[^ ]*/g, match => (match.toLowerCase()))
+							.replace(/^[^ ]/g, match => (match.toUpperCase()));
+
+						return (
+							<TabPane tabId={(index + 1)}
+									 key={index}>
+								<Row className={'tabRow'}>
+									<Col sm="12" className={'tabContent'}>
+										<h4>{tabName}</h4>
+										{this.renderComponent(tabName.replace(/\s/g, ''), (index + 1))}
+									</Col>
+								</Row>
+							</TabPane>
+						);
+					})}
+				</TabContent>
+			</div>
+		);
+	}
 }
 
-export default Tabs;
+const mapStateToProps = (state: any) => {
+	return {
+		tabId: state.changeTabValueReducer.value
+	};
+};
+
+const mapDispatchToProps = (dispatch: any) => {
+	return bindActionCreators(
+		{
+			getTabValue: getTabValue,
+			changeTokenInputValue: changeTokenInputValue,
+			changeAccountInputValue: changeAccountInputValue
+		},
+		dispatch
+	);
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Tabs);

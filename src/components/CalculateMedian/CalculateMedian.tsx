@@ -1,11 +1,13 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {Spinner} from 'reactstrap';
 import axios from 'axios';
+import {connect} from 'react-redux';
 
 /**
  * Import Children
  */
 import InputBoxContainer from '../reuse/InputBoxContainer/InputBoxContainer';
+import ButtonContainer from '../reuse/ButtonContainer/ButtonContainer';
 
 interface CalculateMedianState {
     showSpinner: boolean,
@@ -28,7 +30,7 @@ class CalculateMedian extends Component<any, CalculateMedianState> {
 
     callAPI = (token: string) => {
         this.setState({showSpinner: true});
-        axios.get(`http://localhost:8080/${token}/stats/median`)
+        axios.get(`http://localhost:8080/${token}/stats/median`, {responseType: 'json'})
             .then((res) => {
                 this.setState({
                     data: res.data,
@@ -68,19 +70,28 @@ class CalculateMedian extends Component<any, CalculateMedianState> {
         return (
             <div>
                 <InputBoxContainer
+                    id={this.props.id}
+                    name={['token']}
                     placeholder={'Enter a token value to calculate the median'}
-                    getInputValue={this.handleSubmit}
-                    resetValue={this.resetValue}
                 />
+                <ButtonContainer name={['token']}
+                                 getInputValue={this.handleSubmit}
+                                 id={this.props.id}/>
                 {this.state.showSpinner && <Spinner color="primary"/>}
                 {this.state.data !== '' && !this.state.error &&
-                <div>
-                    <h5>The median value for the supplied token <code>{this.state.value}</code> is </h5>
+                <Fragment>
+                    <h5>The richest value for the supplied token <code>{this.state.value}</code> is </h5>
                     <h4>{this.state.data}</h4>
-                </div>}
+                </Fragment>}
                 {this.state.error && <h4>Invalid token</h4>}
             </div>);
     }
 }
 
-export default CalculateMedian;
+const mapStateToProps = (state: any) => {
+    return {
+        inputId: state.changeTokenInputValueReducer.id
+    };
+};
+
+export default connect(mapStateToProps, null)(CalculateMedian);

@@ -1,0 +1,6 @@
+export enum actionTypes {
+    CHANGE_TOKEN_INPUT_VALUE,
+    CHANGE_ACCOUNT_INPUT_VALUE,
+    RESET_INPUT_VALUE,
+    GET_TAB_VALUE
+}

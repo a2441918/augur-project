@@ -1,11 +1,13 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {Spinner} from 'reactstrap';
 import axios from 'axios';
+import {connect} from 'react-redux';
 
 /**
  * Import Children
  */
 import InputBoxContainer from '../reuse/InputBoxContainer/InputBoxContainer';
+import ButtonContainer from '../reuse/ButtonContainer/ButtonContainer';
 
 interface CalculateMostActiveState {
     showSpinner: boolean,
@@ -28,7 +30,7 @@ class CalculateMostActive extends Component<any, CalculateMostActiveState> {
 
     callAPI = (token: string) => {
         this.setState({showSpinner: true});
-        axios.get(`http://localhost:8080/${token}/stats/mostActive`)
+        axios.get(`http://localhost:8080/${token}/stats/mostActive`, {responseType: 'json'})
             .then((res) => {
                 this.setState({
                     data: res.data,
@@ -67,19 +69,26 @@ class CalculateMostActive extends Component<any, CalculateMostActiveState> {
         return (
             <div>
                 <InputBoxContainer
+                    id={this.props.id}
+                    name={['token']}
                     placeholder={'Enter a token value to calculate the most active token'}
-                    getInputValue={this.handleSubmit}
-                    resetValue={this.resetValue}
                 />
+                <ButtonContainer getInputValue={this.handleSubmit} id={this.props.id}/>
                 {this.state.showSpinner && <Spinner color="primary"/>}
                 {this.state.data !== '' && !this.state.error &&
-                <div>
-                    <h5>The most active account for <code>{this.state.value}</code> is </h5>
+                <Fragment>
+                    <h5>The richest value for the supplied token <code>{this.state.value}</code> is </h5>
                     <h4>{this.state.data}</h4>
-                </div>}
+                </Fragment>}
                 {this.state.error && <h4>Invalid token</h4>}
             </div>);
     }
 }
 
-export default CalculateMostActive;
+const mapStateToProps = (state: any) => {
+    return {
+        inputId: state.changeTokenInputValueReducer.id
+    };
+};
+
+export default connect(mapStateToProps, null)(CalculateMostActive);

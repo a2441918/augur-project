@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b6c43a77-1f0c-4c9f-89d5-87c5cbf476e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CalculateAverage/CalculateAverage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CalculateAverage/CalculateAverage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CalculateBalance/CalculateBalance.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CalculateBalance/CalculateBalance.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/actions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actions.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CalculateMedian/CalculateMedian.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CalculateMedian/CalculateMedian.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CalculateMostActive/CalculateMostActive.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CalculateMostActive/CalculateMostActive.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CalculateRichest/CalculateRichest.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CalculateRichest/CalculateRichest.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Tabs/Tabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tabs/Tabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/reuse/ButtonContainer/ButtonContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reuse/ButtonContainer/ButtonContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/reuse/InputBoxContainer/InputBoxContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reuse/InputBoxContainer/InputBoxContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/ChangeTokenInputReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/ChangeTokenInputReducer.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,22 +20,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/CalculateBalance/CalculateBalance.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="66" column="41" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Tabs/Tabs.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
+              <caret line="132" column="51" selection-start-line="132" selection-start-column="51" selection-end-line="132" selection-end-column="51" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -46,23 +34,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/CalculateMedian/CalculateMedian.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="81" column="22" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+            <state relative-caret-position="451">
+              <caret line="87" column="83" selection-start-line="87" selection-start-column="83" selection-end-line="87" selection-end-column="83" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/CalculateAverage/CalculateAverage.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-                <element signature="e#178#255#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/CalculateMostActive/CalculateMostActive.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="73" column="34" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+            <state relative-caret-position="289">
+              <caret line="81" column="83" selection-start-line="81" selection-start-column="83" selection-end-line="81" selection-end-column="83" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -83,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/CalculateRichest/CalculateRichest.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+            <state relative-caret-position="289">
+              <caret line="78" column="83" lean-forward="true" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="83" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
                 <element signature="e#178#255#0" expanded="true" />
@@ -96,10 +71,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/reuse/InputBoxContainer/InputBoxContainer.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="45" column="112" selection-start-line="45" selection-start-column="112" selection-end-line="45" selection-end-column="112" />
+            <state relative-caret-position="17">
+              <caret line="37" column="44" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/combineReducers.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,6 +101,36 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/reuse/ButtonContainer/ButtonContainer.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="39" selection-start-line="39" selection-end-line="42" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/actions.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/ChangeTokenInputReducer.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -121,7 +138,6 @@
       <find>axios</find>
       <find>acco</find>
       <find>.then</find>
-      <find>console.log</find>
       <find>act</find>
       <find>buttonGroup</find>
       <find>throw</find>
@@ -133,7 +149,6 @@
       <find>calculateBalance</find>
       <find>account</find>
       <find>engin</find>
-      <find>resetValue</find>
       <find>form</find>
       <find>handleChange</find>
       <find>changeInputValueRe</find>
@@ -142,6 +157,9 @@
       <find>redux-logg</find>
       <find>0x1985365e9f78359a9b6ad760e32412f4a445e862</find>
       <find>getInputValue</find>
+      <find>console.log</find>
+      <find>RESET_INPUT_VALUE</find>
+      <find>resetValue</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,20 +205,20 @@
         <option value="$PROJECT_DIR$/src/index.scss" />
         <option value="$PROJECT_DIR$/src/reducers/ChangeInputReducer.tsx" />
         <option value="$PROJECT_DIR$/src/actions/actionTypes.tsx" />
-        <option value="$PROJECT_DIR$/src/actions/actions.tsx" />
         <option value="$PROJECT_DIR$/src/reducers/combineReducers.tsx" />
         <option value="$PROJECT_DIR$/src/store.tsx" />
         <option value="$PROJECT_DIR$/src/reducers/ChangeAccountInputReducer.tsx" />
-        <option value="$PROJECT_DIR$/src/reducers/ChangeTokenInputReducer.tsx" />
-        <option value="$PROJECT_DIR$/src/components/reuse/ButtonContainer/ButtonContainer.tsx" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/src/components/CalculateBalance/CalculateBalance.tsx" />
         <option value="$PROJECT_DIR$/src/components/CalculateAverage/CalculateAverage.tsx" />
-        <option value="$PROJECT_DIR$/src/components/CalculateMostActive/CalculateMostActive.tsx" />
-        <option value="$PROJECT_DIR$/src/components/CalculateRichest/CalculateRichest.tsx" />
-        <option value="$PROJECT_DIR$/src/components/reuse/InputBoxContainer/InputBoxContainer.tsx" />
-        <option value="$PROJECT_DIR$/src/components/CalculateMedian/CalculateMedian.tsx" />
         <option value="$PROJECT_DIR$/src/components/Tabs/Tabs.tsx" />
+        <option value="$PROJECT_DIR$/src/actions/actions.tsx" />
+        <option value="$PROJECT_DIR$/src/reducers/ChangeTokenInputReducer.tsx" />
+        <option value="$PROJECT_DIR$/src/components/CalculateRichest/CalculateRichest.tsx" />
+        <option value="$PROJECT_DIR$/src/components/CalculateMedian/CalculateMedian.tsx" />
+        <option value="$PROJECT_DIR$/src/components/CalculateMostActive/CalculateMostActive.tsx" />
+        <option value="$PROJECT_DIR$/src/components/reuse/InputBoxContainer/InputBoxContainer.tsx" />
+        <option value="$PROJECT_DIR$/src/components/reuse/ButtonContainer/ButtonContainer.tsx" />
       </list>
     </option>
   </component>
@@ -282,6 +300,21 @@
               <item name="augur" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="reuse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="augur" type="b2602c69:ProjectViewProjectNode" />
+              <item name="augur" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="reuse" type="462c0819:PsiDirectoryNode" />
+              <item name="ButtonContainer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="augur" type="b2602c69:ProjectViewProjectNode" />
+              <item name="augur" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Tabs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -312,7 +345,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548623679943" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548624970641" />
     <property name="last_opened_file_path" value="G:/qbui/ui" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -372,7 +405,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64928000" />
+    <option name="totallyTimeSpent" value="66177000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -638,16 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/combineReducers.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -662,30 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="61" lean-forward="true" selection-start-column="61" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/actions.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/ChangeTokenInputReducer.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/reuse/ButtonContainer/ButtonContainer.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="28" column="34" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -717,54 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CalculateMostActive/CalculateMostActive.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="73" column="34" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CalculateRichest/CalculateRichest.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-            <element signature="e#178#255#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/reuse/InputBoxContainer/InputBoxContainer.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="45" column="112" selection-start-line="45" selection-start-column="112" selection-end-line="45" selection-end-column="112" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/token_transfers.json">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="182">
-          <caret line="179" column="60" selection-start-line="179" selection-start-column="18" selection-end-line="179" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CalculateMedian/CalculateMedian.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="81" column="22" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/CalculateBalance/CalculateBalance.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -778,7 +729,89 @@
     <entry file="file://$PROJECT_DIR$/src/components/Tabs/Tabs.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
+          <caret line="132" column="51" selection-start-line="132" selection-start-column="51" selection-end-line="132" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/token_transfers.json">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="182">
+          <caret line="179" column="60" selection-start-line="179" selection-start-column="18" selection-end-line="179" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/combineReducers.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CalculateRichest/CalculateRichest.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="78" column="83" lean-forward="true" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#178#255#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CalculateMostActive/CalculateMostActive.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="81" column="83" selection-start-line="81" selection-start-column="83" selection-end-line="81" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CalculateMedian/CalculateMedian.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="87" column="83" selection-start-line="87" selection-start-column="83" selection-end-line="87" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/actions.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/ChangeTokenInputReducer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/reuse/InputBoxContainer/InputBoxContainer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="37" column="44" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/reuse/ButtonContainer/ButtonContainer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="39" selection-start-line="39" selection-end-line="42" selection-end-column="28" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>

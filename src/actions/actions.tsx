@@ -12,8 +12,9 @@ export const changeAccountInputValue = (value: string, item: string) => ({
 	item
 });
 
-export const resetInputValue = () => ({
-	type: actionTypes.RESET_INPUT_VALUE
+export const resetInputValue = (value: boolean) => ({
+	type: actionTypes.RESET_INPUT_VALUE,
+	value
 });
 
 export const getTabValue = (value: number) => ({

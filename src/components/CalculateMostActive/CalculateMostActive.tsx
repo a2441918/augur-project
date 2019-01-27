@@ -65,6 +65,10 @@ class CalculateMostActive extends Component<any, CalculateMostActiveState> {
         }
     };
 
+    resetInputValue = () => {
+        this.setState({value: '', data: ''})
+    };
+
     render() {
         return (
             <div>
@@ -73,9 +77,9 @@ class CalculateMostActive extends Component<any, CalculateMostActiveState> {
                     name={['token']}
                     placeholder={'most active token'}
                 />
-                <ButtonContainer getInputValue={this.handleSubmit} id={this.props.id}/>
+                <ButtonContainer getInputValue={this.handleSubmit} id={this.props.id} reset={this.resetInputValue}/>
                 {this.state.showSpinner && <Spinner color="primary"/>}
-                {this.state.data !== '' && !this.state.error &&
+                {this.state.data !== '' && !this.state.error && this.state.value &&
                 <Fragment>
                     <h5>The richest value for the supplied token <code>{this.state.value}</code> is </h5>
                     <h4>{this.state.data}</h4>

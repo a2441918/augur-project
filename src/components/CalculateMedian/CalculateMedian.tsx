@@ -66,6 +66,10 @@ class CalculateMedian extends Component<any, CalculateMedianState> {
 		}
 	};
 
+	resetInputValue = () => {
+		this.setState({value: '', data: ''})
+	};
+
 	render() {
 		return (
 			<div>
@@ -76,11 +80,12 @@ class CalculateMedian extends Component<any, CalculateMedianState> {
 				/>
 				<ButtonContainer name={['token']}
 								 getInputValue={this.handleSubmit}
-								 id={this.props.id}/>
+								 id={this.props.id}
+								 reset={this.resetInputValue}/>
 				<div>
 					{this.state.showSpinner && <Spinner color="primary"/>}
 				</div>
-				{this.state.data !== '' && !this.state.error &&
+				{this.state.data !== '' && !this.state.error && this.state.value &&
                 <Fragment>
                     <h5>The richest value for the supplied token <code>{this.state.value}</code> is </h5>
                     <h4>{this.state.data}</h4>

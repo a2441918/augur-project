@@ -90,7 +90,6 @@ class Tabs extends Component<any, TabsState> {
 	};
 
 	render() {
-		console.log(history)
 		return (
 			<div>
 				<Navbar>

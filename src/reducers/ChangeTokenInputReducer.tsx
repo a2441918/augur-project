@@ -2,7 +2,8 @@ import {actionTypes} from '../actions/actionTypes';
 
 const initialState = {
 	token: '',
-	isInvalid: false
+	isInvalid: false,
+	resetValue: false
 };
 
 const validPattern = /^[0-9a-zA-Z]+$/;
@@ -20,7 +21,7 @@ const changeTokenInputValueReducer = (state = initialState, action: any) => {
 		case actionTypes.RESET_INPUT_VALUE: {
 			return {
 				...state,
-				token: initialState.token
+				resetValue: action.value
 			}
 		}
 		default:

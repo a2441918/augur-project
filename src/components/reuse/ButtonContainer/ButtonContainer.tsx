@@ -9,6 +9,7 @@ import {bindActionCreators} from 'redux';
 import {resetInputValue} from '../../../actions/actions';
 
 interface ButtonContainerProps {
+	reset: any,
 	resetInputValue: any,
 	getInputValue: any,
 	token: string,
@@ -25,8 +26,8 @@ class ButtonContainer extends Component<ButtonContainerProps, any> {
 	}
 
 	handleReset = () => {
-		console.log('called')
-		this.props.resetInputValue();
+		this.props.resetInputValue(true);
+		this.props.reset();
 	};
 
 	handleSubmit = () => {
@@ -36,10 +37,10 @@ class ButtonContainer extends Component<ButtonContainerProps, any> {
 	render() {
 		return (
 			<Fragment>
-				<Button color="warning" disabled={this.props.token === ''}
-						onClick={this.handleReset}>
-					Reset
-				</Button>
+				{/*<Button color="warning" disabled={this.props.token === ''}*/}
+						{/*onClick={this.handleReset}>*/}
+					{/*Reset*/}
+				{/*</Button>*/}
 				<Button color="success" disabled={this.props.token === '' || this.props.isInvalid}
 						onClick={this.handleSubmit}>
 					Submit

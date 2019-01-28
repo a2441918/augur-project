@@ -52,6 +52,7 @@ class ButtonContainer extends Component<ButtonContainerProps, any> {
 }
 
 const mapStateToProps = (state: any, ownProps: any) => {
+	console.log(state.changeAccountInputValueReducer.account)
 	return {
 		isInvalid: state.changeTokenInputValueReducer.isInvalid,
 		token: state.changeTokenInputValueReducer.token,

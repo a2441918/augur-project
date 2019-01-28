@@ -8,7 +8,6 @@ import {TAB_NAMES} from '../../constants/constants';
 import logo from '../../augur-logo.svg';
 import {changeTokenInputValue, changeAccountInputValue, getTabValue} from '../../actions/actions';
 import history from '../../utils/utils';
-import ErrorBoundary from '../../App';
 
 /**
  * Import Children components

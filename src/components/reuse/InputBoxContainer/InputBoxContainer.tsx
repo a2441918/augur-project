@@ -41,7 +41,7 @@ class InputBoxContainer extends Component<any, InputBoxContainerState> {
 
 	render() {
 		return (
-			<div>
+			<div className={'inputBoxContainer'}>
 				{this.props.name.map((item: string, index: number) => {
 					return (
 						<FormGroup key={index}>

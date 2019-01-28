@@ -70,8 +70,7 @@ class CalculateRichest extends Component<any, CalculateMostRichestState> {
 					name={['token']}
 					placeholder={'richest'}
 				/>
-				<ButtonContainer name={['token']}
-								 getInputValue={this.handleSubmit}
+				<ButtonContainer getInputValue={this.handleSubmit}
 								 id={this.props.id}
 								 reset={this.resetInputValue}
 				/>

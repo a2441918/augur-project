@@ -1,6 +1,5 @@
 import React, {Component, Fragment} from 'react';
 import axios from 'axios';
-import {connect} from 'react-redux';
 import InputBoxContainer from '../reuse/InputBoxContainer/InputBoxContainer';
 import ButtonContainer from '../reuse/ButtonContainer/ButtonContainer';
 import {Spinner} from 'reactstrap';

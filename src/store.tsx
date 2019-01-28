@@ -1,10 +1,10 @@
-import {createStore, applyMiddleware, compose } from "redux";
-import logger from "redux-logger";
+import {createStore, applyMiddleware} from 'redux';
+import logger from 'redux-logger';
 import combineReducers from './reducers/combineReducers';
 
-const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+import {composeWithDevTools} from 'redux-devtools-extension';
 
 export default function configureStore(initialState = {}) {
-	const store = createStore(combineReducers, initialState, composeEnhancers(applyMiddleware()));
+	const store = createStore(combineReducers, initialState, composeWithDevTools(applyMiddleware(logger)));
 	return store;
 }

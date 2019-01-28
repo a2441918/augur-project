@@ -1,6 +1,6 @@
 # Augur Demo Project
 
-One Paragraph of project description goes here
+Finish a blockchain data processing application and create a simple frontend for it.
 
 ## Getting Started
 
@@ -10,40 +10,25 @@ These instructions will get you a copy of the project up and running on your loc
 
 ```
 Node.js > 10.0.0
+Git
 Browsers: Chrome, IE > 11, Mozilla Firefox, Microsoft Edge
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
+A step by step series of instructions for bringing up the application
 
 
 ```
 git clone https://github.com/a2441918/augur-project
 npm i
 npm start
+--Browser will automatically open
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
 ```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
+npm run test
 ```
 
 ## Built With
@@ -51,6 +36,7 @@ Give an example
 * [create-react-app](https://github.com/facebook/create-react-app) - The client side web framework used
 * [reactstrap](https://reactstrap.github.io/) - React Bootstrap with Bootstrap 4
 * [Node.js](https://nodejs.org/en/) - Backend API
+* [ava](https://github.com/avajs/ava) - Testing Framework
 
 ## Authors
 

@@ -74,7 +74,7 @@ app.get('/:token/stats/richest', (request, response) => {
 
     const richest = calculateRichest(DATA, token, time);
 
-    response.type('string').send(JSON.stringify(richest));
+    response.type('json').send(JSON.stringify(richest));
 });
 
 app.get('/:token/stats/mostActive', (request, response) => {
